@@ -1,0 +1,136 @@
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+  position: relative;
+  z-index: 0;
+}
+
+/* blurred fixed background placed behind content */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("images/bg4.jpg") center/cover no-repeat fixed;
+  /* filter: blur(8px) brightness(0.85); */
+  transform: scale(1.03);
+  z-index: -1;
+}
+
+/* GLASS CARD */
+.glass {
+  position: relative;
+  overflow: hidden;
+  width: 350px;
+  padding: 20px;
+border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* INPUT STYLE */
+.glass-input {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  padding: 10px;
+  transition:
+    0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+.glass-input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glass-input:focus {
+  background: rgba(200, 200, 200, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+/* BUTTON */
+.button-28 {
+  appearance: none;
+  background-color: transparent;
+  /* border: 3.5px solid #1a1a1a;  */
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.671);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 50%;
+  will-change: transform;
+}
+
+/* smaller, centered login button */
+.login-button {
+  min-height: 44px;
+  padding: 10px 20px;
+  width: 220px;
+  font-size: 15px;
+}
+
+.button-28:disabled {
+  pointer-events: none;
+}
+
+.button-28:hover {
+  color: #fff;
+  background-color: #1a1a1a;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-28:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+
+/* SIDEBAR */
+.sidebar {
+  height: 100vh;
+  width: 80px;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.sidebar i {
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+/* PAGE WRAPPER */
+.main {
+  margin-left: 100px;
+  padding: 30px;
+}
