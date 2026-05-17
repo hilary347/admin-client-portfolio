@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link href="https://fonts.cdnfonts.com/css/berghan-free" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Fjalla+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav class="navbar custom-navbar fixed-top justify-content-between p-3">
+      <div class="w-100 d-flex justify-content-between align-items-center">
+        <a class="navbar-brand" href="#">light.dev</a>
+
+        <button
+          class="navbar-toggler d-block d-lg-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Pages</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body bg-dark text-white">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#about" data-bs-dismiss="offcanvas">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#projects" data-bs-dismiss="offcanvas">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#contact" data-bs-dismiss="offcanvas">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="admin_login.html">Admin</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="nav-links d-lg-flex d-none">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link admin_nav" href="admin_login.html">Admin</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container hero">
+      <div class="row">
+        <div
+          class="col-12 title-desc d-flex align-items-center justify-content-center"
+        >
+        <div class="ready-pill">
+              <span class="readydot"></span>
+              Ready to Work.
+            </div>
+          <div class="text-center">
+            <p class="hilary">Hilary</p>
+            <p class="valentine">VALENTINE</p>
+            <p class="job-desc">Front-end Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 animate-left">
+            <div class="pill">
+              <span class="dot"></span>
+              About Me
+            </div>
+            <h1 class="title">knowMe</h1>
+            <p class="subtitle">
+              I'm a frontend and backend web developer focused on creating clean, responsive, and user-centered digital experiences. I specialize in minimalist design, building interfaces that feel modern, intuitive, and visually balanced without unnecessary clutter.
+
+My development stack includes HTML, CSS, Bootstrap, JavaScript, and PHP, allowing me to design and develop fully functional websites from concept to deployment. I enjoy transforming ideas into polished web experiences that combine aesthetics with performance.
+
+Whether it's crafting sleek portfolio websites, dynamic dashboards, or responsive user interfaces, I aim to build projects that are both visually refined and technically efficient.
+
+            </p>
+            
+          </div>
+          <div class="col-lg-6 animate-right">
+            <div class="about-image">
+              <div class="image-placeholder">
+                <img src="images/best_pic.png" alt="Hilary Valentine" class="profile-image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+      <div class="container">
+        <div class="row mb-5 animate-on-scroll">
+          <div class="col-12 text-center">
+            <div class="pill inline">
+              <span class="dot"></span>
+              Portfolio
+            </div>
+            <h1 class="title">My Projects</h1>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="project-content">
+                <h3>Portfolio Website</h3>
+                <p>A responsive personal portfolio showcasing my skills and projects.</p>
+                <div class="project-tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="project-card">
+              <div class="project-image">
+                
+              </div>
+              <div class="project-content">
+                <h3>E-commerce UI</h3>
+                <p>Modern and user-friendly e-commerce interface design.</p>
+                <div class="project-tags">
+                  <span class="tag">Bootstrap</span>
+                  <span class="tag">Responsive</span>
+                  <span class="tag">UI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fas fa-venus"></i>
+              </div>
+              <div class="project-content">
+                <h3>Cosmetic Website</h3>
+                <p>Clean Cosmetics website design with a focus on aesthetics and usability.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Minimalist</span>
+                  <span class="tag">Clean</span>
+                  <span class="tag">Responsive</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <!-- LEFT -->
+          <div class="col-lg-5 animate-left">
+            <div class="pill">
+              <span class="dot"></span>
+              Contact
+            </div>
+
+            <h1 class="title">Get in touch</h1>
+            <p class="subtitle">
+              Let's work together! Whether you have a question, want to
+              collaborate, or just want to say hi, feel free to reach out.
+            </p>
+
+            <!-- Cards -->
+            <a class="info-card" href="mailto:lightcodes347@gmail.com">
+              <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <h6>Email Me</h6>
+                <p>lightcodes347@gmail.com</p>
+              </div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="info-card" href="tel:+2348106231298">
+              <div class="icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <h6>Call Me</h6>
+                <p>+2348106231298</p>
+              </div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a
+              class="info-card"
+              href="https://www.google.com/maps/place/Udoka+Estate,+Anambra/@6.645493,7.062583,17z/data=!3m1!4b1!4m5!3m4!1s0x1035e1f8c8c8c8c8:0x1035e1f8c8c8c8c8!8m2!3d6.645493!4d7.062583"
+              target="_blank"
+            >
+              <div class="icon">⌖</div>
+              <div>
+                <h6>My location</h6>
+                <p>Udoka Estate, Anambra.</p>
+              </div>
+              <span class="arrow">↗</span>
+            </a>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="col-lg-7 animate-right">
+            <div class="form-box">
+              <input type="text" placeholder="Name" class="glass-input" />
+              <input type="email" placeholder="Email" class="glass-input" />
+              <textarea
+                placeholder="Message"
+                rows="8"
+                class="glass-input"
+              ></textarea>
+
+              <button class="submit-btn">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }
+        });
+      });
+
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with animation classes
+      document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
