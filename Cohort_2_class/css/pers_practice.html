@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="vendors/bootstrap-5.3.8-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="pers_practice.css" />
+    <link rel="stylesheet" href="../fontawesome-free-7.1.0-web/css/all.css">
+    <link rel="stylesheet" href="../fontawesome-free-7.1.0-web">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+
+<nav
+        class="navbar navbar-expand-lg navbar-dark custom_navbg sticky-top"
+        aria-label="Offcanvas navbar large"
+      >
+        <div class="container">
+          <a class="navbar-brand mysch" href="#" style="font-size: 40px;">MySchool</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar2"
+            aria-controls="offcanvasNavbar2"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end text-bg-dark"
+            tabindex="-1"
+            id="offcanvasNavbar2"
+            aria-labelledby="offcanvasNavbar2Label"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">
+                Offcanvas
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body ofc_body">
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item pe-3">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Home</a
+                  >
+                </li>
+
+                <li class="nav-item dropdown pe-3">
+                  <a
+                    style="color: white;"
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    About
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="#">About Us</a>
+                    </li>
+
+                    <li>
+                      <a class="dropdown-item" href="#">Admission</a>
+                    </li>
+
+                     <li>
+                      <a class="dropdown-item" href="#">Academics</a>
+                    </li>
+
+                     <li>
+                      <a class="dropdown-item" href="#">Faculty & Staff</a>
+                    </li>
+
+                     <li>
+                      <a class="dropdown-item" href="#">Campus & Facilities</a>
+                    </li>
+
+                  </ul>
+                </li>
+
+                <li class="nav-item pe-2"><a class="nav-link" style="color: white; width: 110px;" href="#">Students Life</a></li>
+                <li class="nav-item pe-2"><a class="nav-link" style="color: white;" href="#">News</a></li>
+                <li class="nav-item pe-2"><a class="nav-link" style="color: white;" href="#">Events</a></li>
+                <li class="nav-item pe-2"><a class="nav-link" style="color: white;" href="#">Alumni</a></li>
+                
+                <li class="nav-item dropdown pe-3">
+                  <a
+                    style="color: white;"
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    More Pages
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="#">News Details</a>
+                    </li>
+
+                    <li>
+                      <a class="dropdown-item" href="#">Event Details</a>
+                    </li>
+
+                     <li>
+                      <a class="dropdown-item" href="#">Privacy</a>
+                    </li>
+
+                     <li>
+                      <a class="dropdown-item" href="#">Terms of Service</a>
+                    </li>
+
+                     <li>
+                      <a class="dropdown-item" href="#">Error 404</a>
+                    </li>
+
+                     <li>
+                      <a class="dropdown-item" href="#">Starter Page</a>
+                    </li>
+
+                  </ul>
+                </li>
+
+                <li class="nav-item dropdown pe-3">
+                  <a
+                    style="color: white;"
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="#">Dropdown 1</a>
+                    </li>
+
+                     <li>
+                      <a class="dropdown-item" href="#">Deep Dropdown</a>
+                    </li>
+
+                    <li>
+                      <a class="dropdown-item" href="#">Dropdown 2</a>
+                    </li>
+
+                     <li>
+                      <a class="dropdown-item" href="#">Dropdown 3</a>
+                    </li>
+
+                     <li>
+                      <a class="dropdown-item" href="#">Dropdown 4</a>
+                    </li>
+
+                  </ul>
+                </li>
+
+                  <li class="nav-item pe-3"><a class="nav-link" style="color: white;" href="#">Contact</a></li>
+              </ul>
+              <div class="d-flex">
+              <button class="btn btn-outline-light signup" type="submit">
+                  Sign Up
+                </button>
+              <button class="btn btn-warning ms-4 reg_custom" type="submit">
+                  Register
+                </button>
+
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </nav>
+
+<!-- Navigation Bar End -->
+
+
+<!-- Hero Section Starts Here -->
+
+<section class="hero_bg_img">
+
+    <div class="px-4 py-5 text-center hero1">
+        <img
+          class="d-block mx-auto mb-4 kar-jpg"
+          src="../pngegg.png"
+          alt=""
+          
+        />
+        <h1 class="display-5 fw-bold text-light shapingmind"
+        style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 50px;">Shaping Minds for <br>Tomorrow's World</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4" style="color: rgba(255, 255, 255, 0.678);">
+            Quickly design and customize responsive mobile-first sites with
+            Bootstrap, the world’s most popular front-end open source toolkit,
+            featuring Sass variables and mixins, responsive grid system,
+            extensive prebuilt components, and powerful JavaScript plugins.
+          </p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3 apply_custombtn">
+              <b>APPLY NOW</b>
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4 campus_custombtn">
+              <b>CAMPUS TOUR</b>
+            </button>
+          </div>
+        </div>
+        <div style="background-color:rgba(76, 56, 59, 0.514) ; display: flex; padding: 10px; justify-self: center; border-radius: 5px; margin-top: 25px;">
+
+          <div style="background-color: rgb(124,56,72); width: 70px; height: 32px; padding: 5px 20px 5px 18px; border-radius: 6px;">
+            <p style="margin: 0px; "> NEW</p>
+          </div>
+          <p style="margin: 3px 0px 0px 20px;">Fall 2025 Applications Open - Early Decision Deadline December 15</p>
+        </div>
+      </div>
+
+</section>
+<!-- Hero Section Ends Here -->
+
+
+
+<!-- Score Section Starts Here -->
+ <section class="container">
+<div class="row gy-4">
+
+  <div class="col-md-4">
+    <div class="first-box">
+      <div class="small_circle">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+      <h3>98% Graduate Success</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+    
+    <div class="col-md-4">
+    <div class="first-box">
+      <div class="small_circle">
+        <i class="fa-solid fa-user-group"></i>
+      </div>
+      <h3>16:1 Student-Faculty Ratio</h3>
+      <p>Proin quis magna vel dolor mattis hendrerit.</p>
+    </div>
+  </div>
+
+    <div class="col-md-4">
+    <div class="first-box">
+      <div class="small_circle">
+        <i class="fa-solid fa-earth-europe"></i>
+      </div>
+      <h3>Global Community</h3>
+      <p>Vestibulum sodales dignissim ipsum id commodo.</p>
+    </div>
+  </div>
+  
+</div>
+
+
+ </section>
+<!-- Score Section Ends Here -->
+
+<!-- Open Campus Day Banner Starts Here -->
+
+<div class="container-fluid open-grandpa">
+
+      <div class="container">
+
+  <div class="row align-items-center open-row">
+
+    <div class="col-lg-2 col-md-2">
+      <div class="date">
+        <span class="month">OCT</span>
+        <span class="day">28</span>
+      </div>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-12 op-day mt-3">
+      <h3>Open Campus Day</h3>
+      <p>Experience our vibrant campus life, meet faculty members, and learn about our academic programs.</p>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-12 mt-3">
+      
+      <a href="#"><button class="btn reg-btn">Register</button></a>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+<!-- Open Campus Day Banner Ends Here -->
+
+<!-- Empowering minds section starts here  -->
+
+<div class="container">
+  <div class="row emp-grandpa">
+
+    <div class="emp1 col-lg-6 col-sm-12 col-md-12">
+        <h3>Empowering Minds, Shaping Futures</h3>
+        <p>For over three decades, we have been committed to providing exceptional education that prepares students for success in an ever-changing world. Our innovative approach combines traditional academic excellence with cutting-edge technology and personalized learning experiences.</p>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="emp2 col-lg-6 col-sm-12 col-md-12">
+      <div class="emp-image-div">
+        <img class="emp-img" src="../campus-5.webp">
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Empowering minds section ends here  -->
+
+
+
+<!-- Featured Programs Section Starts Here  -->
+
+<!-- <div class="feature-title">
+  <h2 class="ft-h">Featured Programs</h2>
+  <div class="hr-line">
+    <hr class="hr-1">
+    <div class="hr-2"></div>
+  </div>
+  <p class="ft-p">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+</div> -->
+
+<!-- Featured Programs Section Ends Here  -->
+
+
+</body>
+</html>

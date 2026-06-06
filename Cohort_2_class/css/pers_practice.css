@@ -1,0 +1,305 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
+
+
+nav {
+    /* border: 1px solid black; */
+    /* top: 0; */
+    /* position: sticky; */
+}
+.custom_navbg {
+    background-color: rgb(124,56,72);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+.reg_custom {
+    width: 140px;
+}
+
+.hero_bg_img {
+    width: 100%;
+    height: auto;
+    background-image: url(../building-8991569.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-top: -70px;
+}
+
+.kar-jpg {
+    margin-top: 30px;
+    max-width: 200px;
+}
+
+.shapingmind {
+    margin-top: -50px;
+}
+
+.hero1 {
+    color: white;
+}
+
+.mysch {
+    margin-left: -20px;
+}
+
+.apply_custombtn {
+    background-color: rgb(124,56,72) !important;
+    border: none !important;
+    transition: background-color 1.2s ease, transform 0.6s ease !important;
+    border-radius: 100px !important;
+    /* width: 195px !important; */
+    font-size: 20px !important;
+}
+
+.apply_custombtn:hover {
+    background-color: rgba(68, 33, 41, 0.5) !important;
+    transform: translateY(-3px);
+}
+
+.campus_custombtn {
+    border-radius: 100px;
+    /* width: 195px !important; */
+    color: white !important;
+    border: 3px solid white !important;
+    transition: background-color 0.6s ease, transform 0.6s ease !important;
+    font-size: 18.5px !important;
+    padding: 13px;
+}
+
+.campus_custombtn:hover {
+    background-color: white !important;
+    color: black !important;
+    transform: translateY(-3px);
+}
+
+.signup {
+    width: 130px;
+}
+
+/* Scores Section  Starts Here  */
+.row {
+    margin-top: -55px;
+}
+
+.small_circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(194, 118, 131, 0.356);
+    color: rgb(124,56,72);
+    font-size: 30px;
+    /* border: 3px solid black; */
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+}
+
+.first-box{
+  background-color: white;
+  box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  border-radius: 20px;
+  height: 100%;
+  transition: transform 0.3s ease;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.first-box:hover {
+    transform: translateY(-5px);
+}
+
+.first-box h3 {
+    font-size: 22px;
+}
+
+/* Scores Section  Ends Here  */
+
+
+/* Open Campus Event Section Starts Here */
+.open-camp-banner {
+    background-color: rgb(234,230,231);
+}
+
+.open-row {
+    margin-top: 40px;
+    padding: 20px 20px;
+    
+}
+
+.date {
+    background-color: rgb(124,56,72);
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+}
+
+.date .month {
+    /* width: 15%; */
+    font-size: 20px;
+    font-weight: 700;
+    /* border: 1px solid black; */
+}
+
+.date .day {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.op-day h3 {
+    font-weight: 700;
+    /* font-size: 100px; */
+}
+
+.op-day p {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.reg-btn {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(124,56,72);
+    border-radius: 50px;
+    color: white;
+    padding: 20px 30px;
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.3s ease !important;
+    /* border: 1px solid black; */
+    width: 100%;
+}
+
+.reg-btn:hover {
+    transform: translateY(-5px) !important;
+    background-color: rgb(83, 21, 36) ;
+    color: white;
+}
+
+.open-grandpa {
+    background-color: rgb(234,230,231);
+}
+
+.feature-title{
+    border: 1px solid black;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.feature-title .ft-h {
+    color: rgb(79,10,19);
+    font-weight: 400;
+}
+
+/* .feature-title .hr-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+
+.feature-title .hr-line .hr-1{ 
+    color: black;
+} */
+
+.hr-line {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    /* border: 1px solid black; */
+    margin-top: -15px;
+}
+
+.hr-1 {
+    width: 15%;
+    font-size: 10px;
+}
+
+.hr-2 {
+    width: 5%;
+    height: 0;
+    border-bottom: 5px solid brown;
+    position: absolute;
+    top: 15px;
+}
+
+.ft-p {
+    font-weight: 450;
+    font-size: 17px;
+}
+
+.emp-grandpa {
+    width: 100%;
+    max-height: 70vh;
+    margin-top: 85px;
+    margin-bottom: 70px;
+    border: 1px solid black;
+    
+}
+
+.emp1{
+    background-color: lightpink;
+    
+    height: clamp(20vh, 60vh, 70vh);
+}
+
+.emp1 h3{
+    font-family: "Raleway", sans-serif;
+    color: rgb(46,10,19);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.2;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.emp1 p{
+    color: rgb(133,69,73);
+    font-family: "Roboto", sans-serif;
+    
+    
+}
+
+.emp2{
+    background-color: lightblue;
+    
+    
+}
+
+.emp2 .emp-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px
+}
+
+.emp-image-div{
+    border: 3px solid black;
+
+    height: 600px;
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="admin_login.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+
+  <body>
+    <!-- ADMIN LOGIN PAGE -->
+
+    <div
+      class="container d-flex justify-content-center align-items-center vh-100"
+    >
+      <div class="glass p-5" style="width: 400px">
+        <h3 class="text-center mb-4" style="color: white">Admin Login</h3>
+
+        <form id="loginForm">
+          <div class="mb-3">
+            <input
+              type="email"
+              id="adminEmail"
+              class="form-control glass-input"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="password"
+              id="adminPassword"
+              class="form-control glass-input"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button type="button" onclick="adminLogin()" class="button-28 login-button" role="button">Login</button>
+          </div>
+          <a
+            href="forgot-password.php"
+            class="text-decoration-none d-block text-center mt-3"
+            style="color: gray"
+            >Forgot password?</a
+          >
+        </form>
+      </div>
+      <a
+        href="index.php"
+        type="button"
+        class="btn btn-outline-info arrow-left">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+    </div>
+
+    <script>
+      function adminLogin() {
+        const email = document.getElementById('adminEmail').value;
+        const password = document.getElementById('adminPassword').value;
+
+        // Simple admin credentials (you can modify these)
+        const adminEmail = 'hilzarvalentine347@gmail.com';
+        const adminPassword = 'admin123';
+
+        if (email === adminEmail && password === adminPassword) {
+          sessionStorage.setItem('isAdmin', 'true');
+          sessionStorage.setItem('adminEmail', email);
+          alert('Login Successful!');
+          window.location.href = 'admin_dashboard.php';
+        } else {
+          alert('Invalid email or password!');
+        }
+      }
+    </script>
+  </body>
+</html>
