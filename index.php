@@ -149,116 +149,41 @@ Whether it's crafting sleek portfolio websites, dynamic dashboards, or responsiv
           <h2 class="section-title">My Projects</h2>
         </div>
         <div class="row g-4">
-
-  <!-- CARD 1 -->
-  <div class="col-lg-4 col-md-6 animate-on-scroll">
-
-    <a href="index.html" class="project-glass-card">
-
-      <div class="project-bg">
-  
-        <img src="images/port.png" alt="">
-      </div>
-
-      <div class="project-overlay"></div>
-
-      <div class="project-info">
-
-        <div class="mini-pill">
-          Featured
-        </div>
-
-        <h3>Portfolio Website</h3>
-
-        <p>
-          A responsive personal portfolio showcasing my skills and projects.
-        </p>
-
-        <div class="project-tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-        </div>
-
-      </div>
-
-    </a>
-
-  </div>
-
-  <!-- CARD 2 -->
-  <div class="col-lg-4 col-md-6 animate-on-scroll">
-
-    <a href="Cohort_2_class/practice_website.html" class="project-glass-card">
-
-      <div class="project-bg">
-        
-        <img src="images/ecommerce.png" alt="">
-      </div>
-
-      <div class="project-overlay"></div>
-
-      <div class="project-info">
-
-        <div class="mini-pill">
-          Modern UI
-        </div>
-
-        <h3>E-commerce UI</h3>
-
-        <p>
-          Modern and user-friendly e-commerce interface design.
-        </p>
-
-        <div class="project-tags">
-          <span class="tag">Bootstrap</span>
-          <span class="tag">Responsive</span>
-          <span class="tag">UI</span>
-        </div>
-
-      </div>
-
-    </a>
-
-  </div>
-
-  <!-- CARD 3 -->
-  <div class="col-lg-4 col-md-6 animate-on-scroll">
-
-    <a href="Oma-Cosmetics-site/index.html" class="project-glass-card">
-
-      <div class="project-bg">
-  
-        <img src="images/cos-sc.png" alt="">
-      </div>
-
-      <div class="project-overlay"></div>
-
-      <div class="project-info">
-
-        <div class="mini-pill">
-          Clean Design
-        </div>
-
-        <h3>Cosmetic Website</h3>
-
-        <p>
-          Clean cosmetics website design focused on aesthetics and usability.
-        </p>
-
-        <div class="project-tags">
-          <span class="tag">Minimalist</span>
-          <span class="tag">Clean</span>
-          <span class="tag">Responsive</span>
-        </div>
-
-      </div>
-
-    </a>
-
-  </div>
-
-</div>
+<?php
+require_once __DIR__ . '/includes/db.php';
+$res = mysqli_query($conn, "SELECT id, name, pill, description, tags, image, link FROM projects ORDER BY id DESC");
+$out = [];
+while ($r = mysqli_fetch_assoc($res)) {
+    $r['tags'] = $r['tags'] ? json_decode($r['tags'], true) : [];
+    $out[] = $r;
+}
+if (empty($out)) {
+    echo "<div class=\"col-12\">No projects yet.</div>";
+} else {
+    foreach ($out as $p) {
+        $name = htmlspecialchars($p['name'] ?? '');
+        $pill = htmlspecialchars($p['pill'] ?? '');
+        $desc = htmlspecialchars($p['description'] ?? '');
+        $img = htmlspecialchars($p['image'] ?? '');
+        $link = htmlspecialchars($p['link'] ?? '#');
+        echo '<div class="col-lg-4 col-md-6 animate-on-scroll">';
+        echo '<a href="' . $link . '" class="project-glass-card">';
+        echo '<div class="project-bg"><img src="' . $img . '" alt=""></div>';
+        echo '<div class="project-overlay"></div>';
+        echo '<div class="project-info">';
+        echo '<div class="mini-pill">' . $pill . '</div>';
+        echo '<h3>' . $name . '</h3>';
+        echo '<p>' . $desc . '</p>';
+        echo '<div class="project-tags">';
+        if (!empty($p['tags']) && is_array($p['tags'])) {
+            foreach ($p['tags'] as $tag) {
+                echo '<span class="tag">' . htmlspecialchars($tag) . '</span>';
+            }
+        }
+        echo '</div></div></a></div>';
+    }
+}
+?>
       </div>
     </section>
 
