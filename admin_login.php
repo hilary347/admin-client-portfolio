@@ -1,9 +1,39 @@
+<?php
+session_start();
+
+if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header('Location: admin_login.php');
+    exit;
+}
+
+$error = '';
+$submittedEmail = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $submittedEmail = trim($_POST['adminEmail'] ?? '');
+    $submittedPassword = trim($_POST['adminPassword'] ?? '');
+
+    $adminEmail = 'hilzarvalentine347@gmail.com';
+    $adminPassword = 'admin123';
+
+    if ($submittedEmail === $adminEmail && $submittedPassword === $adminPassword) {
+        $_SESSION['isAdmin'] = true;
+        $_SESSION['adminEmail'] = $submittedEmail;
+        header('Location: admin_dashboard.php');
+        exit;
+    }
+
+    $error = 'Invalid email or password!';
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Admin Login</title>
     <link rel="stylesheet" href="admin_login.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -13,6 +43,8 @@
   </head>
 
   <body>
+
+  
     <!-- ADMIN LOGIN PAGE -->
 
     <div
@@ -21,11 +53,16 @@
       <div class="glass p-5" style="width: 400px">
         <h3 class="text-center mb-4" style="color: white">Admin Login</h3>
 
-        <form id="loginForm">
+        <?php if ($error): ?>
+          <div class="alert alert-danger text-center"><?= htmlspecialchars($error) ?></div>
+        <?php endif; ?>
+
+        <form id="loginForm" method="POST" action="admin_login.php">
           <div class="mb-3">
             <input
               type="email"
-              id="adminEmail"
+              name="adminEmail"
+              value="<?= htmlspecialchars($submittedEmail) ?>"
               class="form-control glass-input"
               placeholder="Email"
               required
@@ -35,7 +72,7 @@
           <div class="mb-3">
             <input
               type="password"
-              id="adminPassword"
+              name="adminPassword"
               class="form-control glass-input"
               placeholder="Password"
               required
@@ -43,8 +80,9 @@
           </div>
 
           <div class="d-flex justify-content-center">
-            <button type="button" onclick="adminLogin()" class="button-28 login-button" role="button">Login</button>
+            <button type="submit" class="button-28 login-button" role="button">Login</button>
           </div>
+
           <a
             href="forgot-password.php"
             class="text-decoration-none d-block text-center mt-3"
@@ -61,24 +99,10 @@
       </a>
     </div>
 
-    <script>
-      function adminLogin() {
-        const email = document.getElementById('adminEmail').value;
-        const password = document.getElementById('adminPassword').value;
-
-        // Simple admin credentials (you can modify these)
-        const adminEmail = 'hilzarvalentine347@gmail.com';
-        const adminPassword = 'admin123';
-
-        if (email === adminEmail && password === adminPassword) {
-          sessionStorage.setItem('isAdmin', 'true');
-          sessionStorage.setItem('adminEmail', email);
-          alert('Login Successful!');
-          window.location.href = 'admin_dashboard.php';
-        } else {
-          alert('Invalid email or password!');
-        }
-      }
-    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeo6l4Tn5KPhVY5KqjHtvG1F/LE9oE2BXj7raiF5cw3X9F9K"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

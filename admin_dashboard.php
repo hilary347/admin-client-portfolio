@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['isAdmin']) || $_SESSION['isAdmin'] !== true) {
+    header('Location: admin_login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -74,7 +81,28 @@
                   </tr>
                 </thead>
 
-                <tbody id="projectList"></tbody>
+                <tbody>
+                  <tr>
+                    <td>Portfolio Website</td>
+                    <td>Web</td>
+                    <td>UI, Frontend</td>
+                    <td class="action-cell">
+                      <div class="action-buttons">
+                        <button class="view-btn">View</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>E-Commerce App</td>
+                    <td>App</td>
+                    <td>UX, Mobile</td>
+                    <td class="action-cell">
+                      <div class="action-buttons">
+                        <button class="view-btn">View</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </section>
           </div>
@@ -117,15 +145,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script>
-      
-      if (sessionStorage.getItem("isAdmin") !== "true") {
-        window.location.href = "admin_login.php";
-      }
-
-      
       function logout() {
-        sessionStorage.clear();
-        window.location.href = "admin_login.php";
+        window.location.href = "admin_login.php?logout=1";
       }
 
 
@@ -248,36 +269,6 @@
         document.getElementById("cancelProjectEditButton").style.display = "inline-block";
       }
 
-      async function fetchProjects() {
-        try {
-          const res = await fetch('includes/projects_api.php');
-          if (!res.ok) return [];
-          return await res.json();
-        } catch (e) {
-          return [];
-        }
-      }
-
-      async function createOrUpdateProject(project) {
-        try {
-          const res = await fetch('includes/projects_api.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(project),
-          });
-          return await res.json();
-        } catch (e) {
-          console.error('Failed to save project', e);
-          return null;
-        }
-      }
-
-      async function editProject(index) {
-        const projects = await fetchProjects();
-        if (!projects[index]) return;
-        populateProjectForm(projects[index], index);
-      }
-
       function resetProjectForm() {
         document.getElementById("pName").value = "";
         document.getElementById("pDesc").value = "";
@@ -297,68 +288,9 @@
         resetProjectForm();
       }
 
-      async function saveProject() {
-        const formValues = getProjectFormValues();
-        const fileInput = document.getElementById("pImg");
-        const imageData = fileInput.files.length
-          ? await readFileInputAsDataURL(fileInput)
-          : currentProjectImage;
-
-        const payload = {
-          ...formValues,
-          image: imageData,
-        };
-        if (editingProjectId) payload.id = editingProjectId;
-
-        const res = await createOrUpdateProject(payload);
-        if (res && res.success) {
-          alert(editingProjectId ? 'Project Updated!' : 'Project Added!');
-        } else {
-          alert('Failed to save project');
-        }
-
+      function saveProject() {
+        alert("Project section is hardcoded. Add/edit is disabled.");
         resetProjectForm();
-        loadProjects();
-      }
-
-      
-      async function loadProjects() {
-        const projects = await fetchProjects();
-        const list = document.getElementById("projectList");
-        list.innerHTML = "";
-        if (!projects.length) {
-          list.innerHTML = `<tr><td colspan="4">No projects yet.</td></tr>`;
-          return;
-        }
-        projects.forEach((p, index) => {
-          const tags = (p.tags || []).join(", ");
-          list.innerHTML += `
-      <tr>
-        <td>${p.name}</td>
-        <td>${p.pill || ""}</td>
-        <td>${tags}</td>
-        <td class="action-cell">
-          <div class="action-buttons">
-            <button onclick="editProject(${index})" class="edit-btn">Edit</button>
-            <button onclick="deleteProject(${index})" class="delete-btn">Delete</button>
-          </div>
-        </td>
-      </tr>`;
-        });
-      }
-
-      
-      async function deleteProject(index) {
-        const projects = await fetchProjects();
-        const project = projects[index];
-        if (!project || !project.id) return;
-        try {
-          await fetch('includes/projects_api.php?id=' + project.id, { method: 'DELETE' });
-        } catch (e) {
-          console.error('Failed to delete', e);
-        }
-        resetProjectForm();
-        loadProjects();
       }
 
       
@@ -376,7 +308,6 @@
       }
 
       
-      loadProjects();
       loadMessages();
 
       

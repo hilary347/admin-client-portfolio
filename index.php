@@ -30,6 +30,8 @@
       rel="stylesheet"
     />
   </head>
+
+  
   <body>
     <!-- NavBar -->
     <nav class="navbar custom-navbar fixed-top justify-content-between p-3">
@@ -144,46 +146,65 @@ Whether it's crafting sleek portfolio websites, dynamic dashboards, or responsiv
 
     <!-- Projects Section -->
     <section class="projects-section" id="projects">
+
       <div class="container">
+        
         <div class="text-center mb-5">
           <h2 class="section-title">My Projects</h2>
         </div>
         <div class="row g-4">
-<?php
-require_once __DIR__ . '/includes/db.php';
-$res = mysqli_query($conn, "SELECT id, name, pill, description, tags, image, link FROM projects ORDER BY id DESC");
-$out = [];
-while ($r = mysqli_fetch_assoc($res)) {
-    $r['tags'] = $r['tags'] ? json_decode($r['tags'], true) : [];
-    $out[] = $r;
-}
-if (empty($out)) {
-    echo "<div class=\"col-12\">No projects yet.</div>";
-} else {
-    foreach ($out as $p) {
-        $name = htmlspecialchars($p['name'] ?? '');
-        $pill = htmlspecialchars($p['pill'] ?? '');
-        $desc = htmlspecialchars($p['description'] ?? '');
-        $img = htmlspecialchars($p['image'] ?? '');
-        $link = htmlspecialchars($p['link'] ?? '#');
-        echo '<div class="col-lg-4 col-md-6 animate-on-scroll">';
-        echo '<a href="' . $link . '" class="project-glass-card">';
-        echo '<div class="project-bg"><img src="' . $img . '" alt=""></div>';
-        echo '<div class="project-overlay"></div>';
-        echo '<div class="project-info">';
-        echo '<div class="mini-pill">' . $pill . '</div>';
-        echo '<h3>' . $name . '</h3>';
-        echo '<p>' . $desc . '</p>';
-        echo '<div class="project-tags">';
-        if (!empty($p['tags']) && is_array($p['tags'])) {
-            foreach ($p['tags'] as $tag) {
-                echo '<span class="tag">' . htmlspecialchars($tag) . '</span>';
-            }
-        }
-        echo '</div></div></a></div>';
-    }
-}
-?>
+
+
+        
+      <div class="col-lg-4 col-md-6 animate-on-scroll">
+        <a href="#" class="project-glass-card">
+          <div class="project-bg"><img src="images/project1.png" alt="Portfolio Website"></div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="mini-pill">Web</div>
+            <h3>Portfolio Website</h3>
+            <p>A clean personal portfolio site showcasing projects and services.</p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 animate-on-scroll">
+        <a href="#" class="project-glass-card">
+          <div class="project-bg"><img src="images/project2.png" alt="E-Commerce App"></div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="mini-pill">App</div>
+            <h3>E-Commerce App</h3>
+            <p>An intuitive shopping interface built for modern online stores.</p>
+            <div class="project-tags">
+              <span class="tag">UI</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">Responsive</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 animate-on-scroll">
+        <a href="#" class="project-glass-card">
+          <div class="project-bg"><img src="images/project3.png" alt="Dashboard Design"></div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="mini-pill">Design</div>
+            <h3>Dashboard Design</h3>
+            <p>A modern dashboard layout for data display and quick insights.</p>
+            <div class="project-tags">
+              <span class="tag">Figma</span>
+              <span class="tag">UX</span>
+              <span class="tag">Prototyping</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
       </div>
     </section>
 
@@ -268,7 +289,7 @@ if (empty($out)) {
       crossorigin="anonymous"
     ></script>
 
-    <script>
+    <script>          
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           const href = this.getAttribute('href');
